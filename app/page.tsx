@@ -20,12 +20,44 @@ const slogans = [
   <>FORGET <span>THE</span><br />DRY STATE.</>,
 ];
 
+function ProhibitionLogo({ id, className = "", decorative = false }: { id: string; className?: string; decorative?: boolean }) {
+  return (
+    <svg
+      viewBox="0 0 793 396"
+      className={className}
+      role={decorative ? undefined : "img"}
+      aria-label={decorative ? undefined : "Prohibition Drinks"}
+      aria-hidden={decorative ? true : undefined}
+      focusable="false"
+    >
+      <defs>
+        <filter id={id} colorInterpolationFilters="sRGB">
+          <feColorMatrix
+            type="matrix"
+            values="1 0 0 0 0
+                    0 1 0 0 0
+                    0 0 1 0 0
+                   -1 -1 -1 0 3"
+          />
+        </filter>
+      </defs>
+      <image
+        href="/images/prohibition-logo.png"
+        width="793"
+        height="396"
+        preserveAspectRatio="xMidYMid meet"
+        filter={`url(#${id})`}
+      />
+    </svg>
+  );
+}
+
 export default function Home() {
   return (
     <main>
       <header className="nav-shell">
         <a href="#top" className="brand" aria-label="Prohibition Drinks home">
-          <Image src="/images/prohibition-logo.png" alt="Prohibition Drinks" width={1586} height={792} priority />
+          <ProhibitionLogo id="logo-nav-filter" className="logo-art" />
         </a>
         <nav aria-label="Primary navigation">
           {nav.map(([label, href]) => <a key={href} href={href}>{label}</a>)}
@@ -48,7 +80,7 @@ export default function Home() {
         <div className="hero-content">
           <div className="hero-logo-wrap">
             <div className="hero-logo">
-              <Image src="/images/prohibition-logo.png" alt="Prohibition Drinks" width={1586} height={792} priority />
+              <ProhibitionLogo id="logo-hero-filter" className="logo-art" />
             </div>
           </div>
           <div className="slogan-stage" aria-label="Prohibition Drinks brand messages">
@@ -112,7 +144,7 @@ export default function Home() {
             <span>03 / PROHIBITION DRINKS</span>
             <h3>Find your<br/>hidden spirit.</h3>
             <div className="mini-logo">
-              <Image src="/images/prohibition-logo.png" alt="" width={1586} height={792} />
+              <ProhibitionLogo id="logo-mini-filter" className="logo-art" decorative />
             </div>
           </article>
         </div>
@@ -144,7 +176,7 @@ export default function Home() {
 
       <footer>
         <div className="footer-logo">
-          <Image src="/images/prohibition-logo.png" alt="Prohibition Drinks" width={1586} height={792} />
+          <ProhibitionLogo id="logo-footer-filter" className="logo-art" />
         </div>
         <p>Find the hidden spirit.</p>
         <span>© {new Date().getFullYear()} Prohibition Drinks</span>
