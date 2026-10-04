@@ -10,7 +10,6 @@ export const metadata: Metadata = {
     description: "Find your hidden spirit.",
     url: "https://prohibitiondrinks.com",
     siteName: "Prohibition Drinks",
-    images: [{ url: "/images/hero.webp", width: 1800, height: 985 }],
     type: "website"
   },
 };
