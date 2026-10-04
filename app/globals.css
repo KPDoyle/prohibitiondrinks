@@ -70,3 +70,66 @@ footer{min-height:320px;padding:54px 8vw 38px;display:grid;grid-template-columns
     width: min(390px, 82vw);
   }
 }
+
+
+/* Final Prohibition logo treatment */
+.brand,
+.hero-logo-wrap,
+.hero-logo,
+.footer-logo,
+.mini-logo {
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+}
+
+.brand {
+  width: 210px;
+  height: auto;
+  padding: 0 !important;
+}
+
+.brand img,
+.hero-logo img,
+.footer-logo img,
+.mini-logo img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.hero-logo-wrap {
+  padding: 0 !important;
+  margin-bottom: 12px;
+}
+
+.hero-logo {
+  width: clamp(390px, 41vw, 640px);
+  height: auto !important;
+  aspect-ratio: auto !important;
+  padding: 0 !important;
+}
+
+.hero-logo img {
+  filter: drop-shadow(0 12px 28px rgba(0,0,0,.62));
+}
+
+.footer-logo {
+  width: 230px;
+  height: auto !important;
+  padding: 0 !important;
+}
+
+.mini-logo {
+  width: 175px;
+  height: auto !important;
+  padding: 0 !important;
+}
+
+@media(max-width:700px){
+  .brand { width: 165px; height:auto; }
+  .hero-logo { width:min(420px,86vw); height:auto !important; }
+  .footer-logo { width:205px; height:auto !important; }
+  .mini-logo { width:140px; height:auto !important; }
+}
