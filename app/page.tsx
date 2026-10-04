@@ -1,5 +1,3 @@
-import Image from "next/image";
-
 const nav = [
   ["Story", "#story"],
   ["Spirit", "#spirit"],
@@ -13,7 +11,8 @@ export default function Home() {
     <main>
       <header className="nav-shell">
         <a href="#top" className="brand" aria-label="Prohibition Drinks home">
-          <Image src="/images/logo.png" alt="Prohibition Drinks" width={700} height={350} priority />
+          <span className="brand-mark">P</span>
+          <span className="brand-copy"><strong>PROHIBITION</strong><small>DRINKS</small></span>
         </a>
         <nav aria-label="Primary navigation">
           {nav.map(([label, href]) => <a key={href} href={href}>{label}</a>)}
@@ -21,8 +20,8 @@ export default function Home() {
       </header>
 
       <section id="top" className="hero">
-        <Image className="hero-image" src="/images/hero.webp" alt="Celebration marking the end of Prohibition" fill priority sizes="100vw" />
-        <div className="hero-vignette" />
+        <div className="deco deco-a" />
+        <div className="deco deco-b" />
         <div className="grain" />
         <div className="hero-content">
           <p className="eyebrow">Est. in the spirit of 1933</p>
@@ -43,14 +42,15 @@ export default function Home() {
           <h2>Born from an era when a good drink came with a better story.</h2>
           <p>Prohibition created hidden rooms, whispered passwords and a culture of creativity that refused to disappear. Prohibition Drinks takes its cue from that independent spirit — not to recreate the past, but to bottle its attitude.</p>
         </div>
-        <div className="story-image framed-image">
-          <Image src="/images/farewell.webp" alt="Historic farewell to the 18th Amendment" fill sizes="(max-width: 900px) 100vw, 45vw" />
+        <div className="story-poster">
+          <span>DECEMBER 5</span>
+          <strong>1933</strong>
+          <p>THE DRY ERA ENDS</p>
         </div>
       </section>
 
       <section id="spirit" className="statement">
-        <Image src="/images/we-want-beer.webp" alt="Historic We Want Beer march" fill sizes="100vw" />
-        <div className="statement-overlay" />
+        <div className="statement-grid" />
         <div className="statement-inner">
           <p className="eyebrow">The spirit</p>
           <blockquote>“Forget the dry state.”</blockquote>
@@ -67,18 +67,18 @@ export default function Home() {
           </div>
         </div>
         <div className="archive-grid">
-          <article className="archive-card tall">
-            <Image src="/images/barrels.webp" alt="Whisky barrels" fill sizes="(max-width: 800px) 100vw, 50vw" />
-            <span>Craft</span>
+          <article className="archive-card primary-card">
+            <span>01 / CRAFT</span>
+            <h3>Made with character.</h3>
+            <p>Dark rooms, polished brass, hand-lettered signs and the quiet confidence of a brand that does not need to shout.</p>
           </article>
           <article className="archive-card">
-            <Image src="/images/bottlenecks.webp" alt="Bottle necks" fill sizes="(max-width: 800px) 100vw, 50vw" />
-            <span>Character</span>
-          </article>
-          <article className="archive-card text-card">
-            <p className="eyebrow">Find your hidden spirit</p>
+            <span>02 / CULTURE</span>
             <h3>Party like it’s Prohibition.</h3>
-            <p>A modern drinks brand with a rebellious past and an eye firmly on what comes next.</p>
+          </article>
+          <article className="archive-card gold-card">
+            <span>03 / ATTITUDE</span>
+            <h3>Find your hidden spirit.</h3>
           </article>
         </div>
       </section>
@@ -104,9 +104,7 @@ export default function Home() {
       </section>
 
       <footer>
-        <a href="#top" className="footer-brand">
-          <Image src="/images/logo.png" alt="Prohibition Drinks" width={700} height={350} />
-        </a>
+        <div className="footer-brand">PROHIBITION <span>DRINKS</span></div>
         <p>Find the hidden spirit.</p>
         <span>© {new Date().getFullYear()} Prohibition Drinks</span>
       </footer>
