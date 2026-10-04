@@ -21,3 +21,52 @@ footer{min-height:320px;padding:54px 8vw 38px;display:grid;grid-template-columns
 @media(max-width:1000px){.nav-shell{grid-template-columns:190px 1fr}.brand{width:165px;height:68px}.nav-cta{display:none}nav{justify-content:end;gap:1.45rem}.section{padding:100px 7vw}.story{grid-template-columns:1fr;gap:42px}.story .section-number,.archive-heading .section-number{width:70px}.story-image{min-height:500px;box-shadow:18px 18px 0 #d8cdb9}.archive-heading{grid-template-columns:1fr;gap:28px}.archive-grid{grid-template-columns:1fr;grid-template-rows:520px 330px 320px}.archive-main{grid-row:auto}.contact{grid-template-columns:1fr;gap:24px}footer{grid-template-columns:1fr;gap:14px;padding-top:175px}}
 @media(max-width:700px){.nav-shell{height:92px;grid-template-columns:1fr;padding:12px 5vw}.brand{width:145px;height:60px}nav{display:none}.deco-frame{inset:110px 14px 18px}.hero{min-height:790px}.hero-content{padding-top:82px;width:92vw}.hero-logo-wrap{margin-bottom:0}.hero-logo{width:min(350px,75vw);padding:10px 16px}.slogan-stage{height:210px}.slogan{font-size:clamp(40px,12vw,62px)}.hero-subline{font-size:7px;gap:9px;letter-spacing:.18em}.hero-subline span:first-child{display:none}.hero-actions{flex-direction:column;align-items:stretch;max-width:310px;margin:auto}.scroll-cue{display:none}.slider-dots{bottom:28px}.section{padding:82px 6vw}.story-image{min-height:430px;box-shadow:10px 10px 0 #d8cdb9}.statement{min-height:620px}.statement blockquote{font-size:60px}.archive-grid{grid-template-rows:400px 290px 290px}.archive-image>div{left:24px;bottom:22px}.gold-card{padding:28px}.mini-logo{width:130px;height:65px}.trade{min-height:700px;padding:90px 6vw}.contact-link{font-size:19px;overflow-wrap:anywhere}.footer-logo{width:185px;height:92px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.hero-slide,.slogan,.hero-slide img{animation:none}.hero-slide-1,.slogan-1{opacity:1}.hero-slide-2,.hero-slide-3,.slogan-2,.slogan-3{display:none}}
+
+
+/* Transparent original logo treatment */
+.brand,
+.hero-logo-wrap,
+.hero-logo,
+.footer-logo,
+.mini-logo {
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+}
+
+.brand {
+  padding: 0 !important;
+  overflow: visible;
+}
+
+.hero-logo-wrap {
+  padding: 0 !important;
+}
+
+.hero-logo {
+  padding: 0 !important;
+  width: clamp(360px, 38vw, 590px);
+}
+
+.footer-logo,
+.mini-logo {
+  padding: 0 !important;
+}
+
+.logo-art {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  filter: drop-shadow(0 8px 20px rgba(0,0,0,.42));
+}
+
+.hero-logo .logo-art {
+  filter: drop-shadow(0 12px 28px rgba(0,0,0,.58));
+}
+
+@media(max-width:700px){
+  .hero-logo {
+    width: min(390px, 82vw);
+  }
+}
